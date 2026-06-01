@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recuerdos de mi Abuela — Pedidos</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#3d5a1e" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Recuerdos Abuela" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Recuerdos de mi Abuela — Productos Naturales Artesanales" />
+  <meta property="og:description" content="Kéfir de Leche, Kéfir de Agua y Kombucha artesanal. Natural, hecho en casa con amor. Pedidos por WhatsApp." />
+  <meta property="og:image" content="recuerdos.PNG" />
+  <meta property="og:url" content="https://haroldco45.github.io/recuerdosdemiabuela/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream: #f5f0e8;
+      --cream2: #ede5d0;
+      --parchment: #e8dcc8;
+      --brown-dark: #2c1a0e;
+      --brown-mid: #5c3d1e;
+      --brown-light: #8b6340;
+      --green-dark: #2d4a0f;
+      --green-mid: #3d5a1e;
+      --green-light: #5a7a2e;
+      --green-pale: #8aab52;
+      --olive: #6b7c3a;
+      --accent-red: #8b2020;
+      --gold: #b8952a;
+      --text-dark: #1a1008;
+      --text-mid: #3d2810;
+      --shadow: rgba(44,26,14,0.18);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--cream);
+      font-family: 'Crimson Text', serif;
+      color: var(--text-dark);
+      min-height: 100vh;
+      background-image:
+        radial-gradient(ellipse at 20% 0%, rgba(90,122,46,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 100%, rgba(184,149,42,0.06) 0%, transparent 60%);
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: var(--green-dark);
+      background-image: linear-gradient(135deg, #1a3008 0%, #2d4a0f 50%, #1a3008 100%);
+      padding: 18px 16px 14px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.35);
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .header-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    }
+
+    .header-brand {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.9rem;
+      color: var(--cream);
+      line-height: 1;
+      text-shadow: 1px 2px 6px rgba(0,0,0,0.5);
+    }
+
+    .header-sub {
+      font-family: 'Crimson Text', serif;
+      font-style: italic;
+      font-size: 0.85rem;
+      color: #c9d9a0;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    .header-badges {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(184,149,42,0.5);
+      color: #c9d9a0;
+      font-size: 0.68rem;
+      padding: 3px 9px;
+      border-radius: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-family: 'Crimson Text', serif;
+    }
+
+    /* ===== CLOCK ===== */
+    .clock-bar {
+      background: var(--parchment);
+      border-bottom: 1px solid #c8b89a;
+      padding: 6px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--brown-mid);
+      font-family: 'Crimson Text', serif;
+    }
+
+    #reloj-col {
+      font-weight: 600;
+      color: var(--green-dark);
+    }
+
+    /* ===== MAIN ===== */
+    main { padding: 0 0 120px; }
+
+    /* ===== SECTION TITLE ===== */
+    .section-title {
+      text-align: center;
+      padding: 22px 16px 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--green-dark);
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 6px auto 0;
+      border-radius: 2px;
+    }
+
+    .section-intro {
+      text-align: center;
+      font-style: italic;
+      color: var(--brown-light);
+      font-size: 0.95rem;
+      padding: 0 20px 16px;
+    }
+
+    /* ===== PRODUCTS ===== */
+    .products-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding: 0 12px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px var(--shadow);
+      border: 1px solid #ddd0b8;
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .product-img-wrap {
+      position: relative;
+      height: 260px;
+      overflow: hidden;
+      background: var(--parchment);
+    }
+
+    .product-img-wrap img { }
+    .product-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+
+    .product-tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: var(--green-dark);
+      color: #fff;
+      font-size: 0.65rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-family: 'Crimson Text', serif;
+      font-weight: 600;
+    }
+
+    .product-price-tag {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: var(--green-dark);
+      color: var(--cream);
+      border-radius: 10px;
+      padding: 6px 12px;
+      text-align: center;
+      border: 2px solid var(--gold);
+    }
+
+    .product-price-tag .price-main {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1;
+      color: #fff;
+    }
+
+    .product-price-tag .price-unit {
+      font-size: 0.65rem;
+      color: #c9d9a0;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .product-price-tag .price-promo {
+      font-size: 0.7rem;
+      color: var(--gold);
+      margin-top: 2px;
+    }
+
+    .product-body {
+      padding: 14px 16px 16px;
+    }
+
+    .product-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      color: var(--green-dark);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .product-sub {
+      font-family: 'Dancing Script', cursive;
+      font-size: 0.95rem;
+      color: var(--brown-light);
+      margin-bottom: 10px;
+    }
+
+    /* Benefits accordion */
+    .benefits-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      background: var(--cream2);
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin-bottom: 6px;
+      border: 1px solid #d4c5a9;
+      user-select: none;
+    }
+
+    .benefits-toggle span {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .benefits-toggle .arrow {
+      transition: transform 0.3s;
+      color: var(--green-mid);
+      font-size: 0.75rem;
+    }
+
+    .benefits-toggle.open .arrow { transform: rotate(180deg); }
+
+    .benefits-list {
+      display: none;
+      background: #fafaf5;
+      border-radius: 8px;
+      padding: 10px 14px;
+      border: 1px solid #e0d4bc;
+      margin-bottom: 10px;
+    }
+
+    .benefits-list.visible { display: block; }
+
+    .benefits-list li {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      margin-bottom: 4px;
+      display: flex;
+      gap: 7px;
+      align-items: flex-start;
+      line-height: 1.3;
+    }
+
+    .benefits-list li::before {
+      content: '✦';
+      color: var(--green-pale);
+      font-size: 0.65rem;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    /* Quantity controls */
+    .qty-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--cream2);
+      border-radius: 10px;
+      padding: 10px 14px;
+      border: 1px solid #d4c5a9;
+      margin-top: 6px;
+    }
+
+    .qty-label {
+      font-size: 0.82rem;
+      color: var(--brown-mid);
+      font-weight: 600;
+    }
+
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .qty-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 2px solid var(--green-mid);
+      background: #fff;
+      color: var(--green-dark);
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+      line-height: 1;
+    }
+
+    .qty-btn:active { background: var(--green-mid); color: #fff; transform: scale(0.92); }
+
+    .qty-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      min-width: 28px;
+      text-align: center;
+    }
+
+    .qty-subtotal {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--green-dark);
+      font-weight: 700;
+    }
+
+    /* ===== ORDER SUMMARY ===== */
+    .summary-section {
+      background: var(--green-dark);
+      background-image: linear-gradient(135deg, #1a3008 0%, #2d4a0f 100%);
+      margin: 0 12px;
+      border-radius: 16px;
+      padding: 18px;
+      border: 2px solid var(--gold);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      margin-top: 4px;
+    }
+
+    .summary-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--cream);
+      text-align: center;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .summary-items {
+      background: rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 12px;
+      min-height: 40px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #c9d9a0;
+      font-size: 0.92rem;
+      padding: 3px 0;
+    }
+
+    .summary-row.total {
+      border-top: 1px solid rgba(184,149,42,0.4);
+      margin-top: 8px;
+      padding-top: 8px;
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .summary-empty {
+      color: rgba(201,217,160,0.5);
+      font-style: italic;
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 4px 0;
+    }
+
+    /* ===== FORM ===== */
+    .form-section {
+      background: #fff;
+      margin: 12px 12px 0;
+      border-radius: 16px;
+      padding: 18px;
+      border: 1px solid #ddd0b8;
+      box-shadow: 0 2px 8px var(--shadow);
+    }
+
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--green-dark);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--brown-mid);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      border: 1.5px solid #d4c5a9;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-family: 'Crimson Text', serif;
+      font-size: 1rem;
+      color: var(--text-dark);
+      background: var(--cream);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--green-mid);
+      background: #fff;
+    }
+
+    .form-group textarea { resize: vertical; min-height: 70px; }
+
+    .gps-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--cream2);
+      border: 1.5px dashed #b8952a;
+      border-radius: 10px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-family: 'Crimson Text', serif;
+      font-size: 0.92rem;
+      color: var(--brown-mid);
+      width: 100%;
+      transition: all 0.2s;
+    }
+
+    .gps-btn:hover { background: #e8dcc8; }
+    .gps-btn.found { border-color: var(--green-mid); color: var(--green-dark); background: #f0f5e8; }
+
+    #gps-status {
+      font-size: 0.78rem;
+      color: var(--brown-light);
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    #gps-status.ok { color: var(--green-mid); }
+
+    /* ===== SEND BUTTON ===== */
+    .send-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #25D366;
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      padding: 16px 24px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      width: calc(100% - 24px);
+      margin: 14px 12px 0;
+      box-shadow: 0 4px 14px rgba(37,211,102,0.35);
+      transition: all 0.2s;
+    }
+
+    .send-btn:active { transform: scale(0.97); box-shadow: none; }
+    .send-btn:disabled { background: #9ab8a0; cursor: not-allowed; }
+
+    .send-btn svg { width: 24px; height: 24px; flex-shrink: 0; }
+
+    /* ===== FOOTER CREDITS ===== */
+    footer {
+      text-align: center;
+      padding: 20px 16px 28px;
+      font-size: 0.78rem;
+      color: #9a8870;
+      font-style: italic;
+    }
+
+    footer strong {
+      color: var(--green-mid);
+      font-style: normal;
+    }
+
+    /* ===== ORNAMENT ===== */
+    .ornament {
+      text-align: center;
+      color: var(--gold);
+      font-size: 1rem;
+      letter-spacing: 8px;
+      padding: 6px 0;
+      opacity: 0.6;
+    }
+
+    /* ===== DIVIDER ===== */
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--parchment), transparent);
+      margin: 8px 24px;
+    }
+
+    /* ===== PROMO TAG ===== */
+    .promo-note {
+      background: linear-gradient(135deg, #3d5a1e, #2d4a0f);
+      color: #c9d9a0;
+      font-size: 0.72rem;
+      padding: 4px 10px;
+      border-radius: 0 0 10px 10px;
+      text-align: center;
+      letter-spacing: 0.5px;
+      margin-top: -1px;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--green-dark);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      opacity: 0;
+      transition: all 0.3s;
+      z-index: 999;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* Posición específica por imagen de producto */
+    .img-infografia { object-position: center top !important; }
+    .img-postre     { object-position: center 30% !important; }
+    .img-suero      { object-position: center 15% !important; }
+    .img-kombucha   { object-position: center center !important; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <img src="recuerdos.PNG" alt="Recuerdos de mi Abuela" class="header-logo" />
+  <div class="header-brand">Recuerdos de mi Abuela</div>
+  <div class="header-sub">y de mi mamá · El Origen Verdadero</div>
+  <div class="header-badges">
+    <span class="badge">🌿 Natural</span>
+    <span class="badge">🏠 Hecho en Casa</span>
+    <span class="badge">❤️ Con Amor</span>
+    <span class="badge">👨‍👩‍👧 Para la Familia</span>
+  </div>
+</header>
+
+<!-- CLOCK BAR -->
+<div class="clock-bar">
+  <span>🇨🇴 Colombia</span>
+  <span id="reloj-col">Cargando...</span>
+</div>
+
+<main>
+
+  <!-- PRODUCTS TITLE -->
+  <h2 class="section-title">🫙 Nuestros Productos</h2>
+  <p class="section-intro">Artesanales, vivos y fermentados con amor · Recetas que transformamos en bienestar para ti y los tuyos</p>
+
+  <div class="products-grid">
+
+    <!-- ===== KÉFIR DE LECHE ===== -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="kefir1.jpeg" alt="Kéfir de Leche Natural de Vaca" class="img-infografia" loading="lazy" />
+        <span class="product-tag">🥛 Fermentado</span>
+        <div class="product-price-tag">
+          <div class="price-main">$35.000</div>
+          <div class="price-unit">el litro</div>
+          <div class="price-promo">2ª compra: $30.000</div>
+        </div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Kéfir de Leche</div>
+        <div class="product-sub">Natural de Vaca · Artesanal y Vivo</div>
+
+        <div class="benefits-toggle" onclick="toggleBenefits('kl')">
+          <span>✦ 12 Beneficios Importantes</span>
+          <span class="arrow" id="arrow-kl">▼</span>
+        </div>
+        <ul class="benefits-list" id="ben-kl">
+          <li>Mejora la salud digestiva</li>
+          <li>Fortalece el sistema inmunológico</li>
+          <li>Favorece la absorción de nutrientes</li>
+          <li>Ayuda a equilibrar la flora intestinal</li>
+          <li>Contribuye a la salud ósea</li>
+          <li>Puede ayudar a controlar el colesterol</li>
+          <li>Apoya el control de peso</li>
+          <li>Mejora la salud de la piel</li>
+          <li>Puede reducir la inflamación</li>
+          <li>Regula el tránsito intestinal</li>
+          <li>Aporta proteínas de alta calidad</li>
+          <li>Fuente natural de probióticos</li>
+        </ul>
+
+        <div class="qty-section">
+          <span class="qty-label">Litros a pedir:</span>
+          <div class="qty-controls">
+            <button class="qty-btn" onclick="changeQty('kl', -1)">−</button>
+            <span class="qty-num" id="qty-kl">0</span>
+            <button class="qty-btn" onclick="changeQty('kl', 1)">+</button>
+          </div>
+          <span class="qty-subtotal" id="sub-kl">$0</span>
+        </div>
+      </div>
+      <div class="promo-note">♻️ Devuelve el envase en tu 2ª compra y paga solo $30.000/litro</div>
+    </div>
+
+    <!-- ===== KÉFIR DE AGUA ===== -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="kefir3.jpeg" alt="Kéfir de Agua" class="img-infografia" loading="lazy" />
+        <span class="product-tag">💧 Refrescante</span>
+        <div class="product-price-tag">
+          <div class="price-main">$25.000</div>
+          <div class="price-unit">el litro</div>
+          <div class="price-promo">2ª compra: $20.000</div>
+        </div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Kéfir de Agua</div>
+        <div class="product-sub">Refrescante, Natural y Lleno de Vida</div>
+
+        <div class="benefits-toggle" onclick="toggleBenefits('ka')">
+          <span>✦ 12 Beneficios Importantes</span>
+          <span class="arrow" id="arrow-ka">▼</span>
+        </div>
+        <ul class="benefits-list" id="ben-ka">
+          <li>Mejora la salud digestiva</li>
+          <li>Fortalece el sistema inmunológico</li>
+          <li>Rico en antioxidantes naturales</li>
+          <li>Desintoxica el organismo</li>
+          <li>Aporta energía natural sin cafeína</li>
+          <li>Ayuda a controlar el peso</li>
+          <li>Hidrata y alcaliniza el cuerpo</li>
+          <li>Mejora el estado de ánimo</li>
+          <li>Cuida tu corazón</li>
+          <li>Fortalece huesos y dientes</li>
+          <li>100% natural y refrescante</li>
+          <li>Alivia problemas digestivos</li>
+        </ul>
+
+        <div class="qty-section">
+          <span class="qty-label">Litros a pedir:</span>
+          <div class="qty-controls">
+            <button class="qty-btn" onclick="changeQty('ka', -1)">−</button>
+            <span class="qty-num" id="qty-ka">0</span>
+            <button class="qty-btn" onclick="changeQty('ka', 1)">+</button>
+          </div>
+          <span class="qty-subtotal" id="sub-ka">$0</span>
+        </div>
+      </div>
+      <div class="promo-note">♻️ En la 2ª compra devolviendo el envase pagas solo $20.000/litro</div>
+    </div>
+
+    <!-- ===== SUERO 100% DE KÉFIR ===== -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="kefir6.jpeg" alt="Suero 100% de Kéfir" class="img-suero" loading="lazy" />
+        <span class="product-tag">🥛 100% Natural</span>
+        <div class="product-price-tag">
+          <div class="price-main">$10.000</div>
+          <div class="price-unit">medio litro</div>
+        </div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Suero 100% de Kéfir</div>
+        <div class="product-sub">El Origen Verdadero · Hecho con Amor</div>
+
+        <div class="benefits-toggle" onclick="toggleBenefits('sk')">
+          <span>✦ Beneficios del Suero de Kéfir</span>
+          <span class="arrow" id="arrow-sk">▼</span>
+        </div>
+        <ul class="benefits-list" id="ben-sk">
+          <li>Altísima concentración de probióticos naturales</li>
+          <li>Favorece la digestión y la flora intestinal</li>
+          <li>Fuente natural de proteínas y minerales</li>
+          <li>Ayuda a equilibrar el pH del organismo</li>
+          <li>Fortalece el sistema inmunológico</li>
+          <li>Ideal para usar en recetas caseras</li>
+          <li>100% natural, sin conservantes ni químicos</li>
+          <li>Hecho en casa con amor y tradición</li>
+        </ul>
+
+        <div class="qty-section">
+          <span class="qty-label">Unidades (½ litro):</span>
+          <div class="qty-controls">
+            <button class="qty-btn" onclick="changeQty('sk', -1)">−</button>
+            <span class="qty-num" id="qty-sk">0</span>
+            <button class="qty-btn" onclick="changeQty('sk', 1)">+</button>
+          </div>
+          <span class="qty-subtotal" id="sub-sk">$0</span>
+        </div>
+      </div>
+      <div class="promo-note">🌿 Natural · Hecho en Casa · El Origen Verdadero</div>
+    </div>
+
+    <!-- ===== POSTRE MIELMESABE DE KÉFIR ===== -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="kefir5.jpeg" alt="Postre Mielmesabe de Kéfir" class="img-postre" loading="lazy" />
+        <span class="product-tag">🍯 Postre Artesanal</span>
+        <div class="product-price-tag">
+          <div class="price-main">$15.000</div>
+          <div class="price-unit">por unidad</div>
+        </div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Postre Mielmesabe de Kéfir</div>
+        <div class="product-sub">Dulce, Natural y Hecho con Amor</div>
+
+        <div class="benefits-toggle" onclick="toggleBenefits('pm')">
+          <span>✦ ¿Por qué es especial?</span>
+          <span class="arrow" id="arrow-pm">▼</span>
+        </div>
+        <ul class="benefits-list" id="ben-pm">
+          <li>Elaborado con kéfir natural artesanal</li>
+          <li>Endulzado con miel pura y natural</li>
+          <li>Aporta probióticos incluso en postre</li>
+          <li>Sin conservantes ni sabores artificiales</li>
+          <li>Fuente de calcio, proteínas y nutrientes esenciales</li>
+          <li>Ideal para toda la familia, incluyendo niños</li>
+          <li>Receta transmitida de generación en generación</li>
+          <li>Una delicia que nutre y deleita el paladar</li>
+        </ul>
+
+        <div class="qty-section">
+          <span class="qty-label">Unidades a pedir:</span>
+          <div class="qty-controls">
+            <button class="qty-btn" onclick="changeQty('pm', -1)">−</button>
+            <span class="qty-num" id="qty-pm">0</span>
+            <button class="qty-btn" onclick="changeQty('pm', 1)">+</button>
+          </div>
+          <span class="qty-subtotal" id="sub-pm">$0</span>
+        </div>
+      </div>
+      <div class="promo-note">🍯 Receta que transformamos en bienestar para ti y los tuyos</div>
+    </div>
+
+    <!-- ===== KOMBUCHA ===== -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="kombucha.jpeg" alt="Kombucha Artesanal" class="img-kombucha" loading="lazy" />
+        <span class="product-tag">✨ El Elixir</span>
+        <div class="product-price-tag">
+          <div class="price-main">$35.000</div>
+          <div class="price-unit">el litro</div>
+          <div class="price-promo">Intercambio: $30.000</div>
+        </div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Kombucha</div>
+        <div class="product-sub">El Elixir de Bienestar · Natural, Artesanal, Viva</div>
+
+        <div class="benefits-toggle" onclick="toggleBenefits('kb')">
+          <span>✦ 12 Beneficios de la Kombucha</span>
+          <span class="arrow" id="arrow-kb">▼</span>
+        </div>
+        <ul class="benefits-list" id="ben-kb">
+          <li>Mejora la digestión</li>
+          <li>Fortalece el sistema inmunológico</li>
+          <li>Aporta probióticos naturales</li>
+          <li>Desintoxica el organismo</li>
+          <li>Aumenta la energía natural</li>
+          <li>Mejora la salud intestinal</li>
+          <li>Favorece la absorción de nutrientes</li>
+          <li>Ayuda a equilibrar el pH del cuerpo</li>
+          <li>Apoya la salud del hígado</li>
+          <li>Reduce la inflamación</li>
+          <li>Mejora el estado de ánimo</li>
+          <li>Refresca, hidrata y revitaliza</li>
+        </ul>
+
+        <div class="qty-section">
+          <span class="qty-label">Litros a pedir:</span>
+          <div class="qty-controls">
+            <button class="qty-btn" onclick="changeQty('kb', -1)">−</button>
+            <span class="qty-num" id="qty-kb">0</span>
+            <button class="qty-btn" onclick="changeQty('kb', 1)">+</button>
+          </div>
+          <span class="qty-subtotal" id="sub-kb">$0</span>
+        </div>
+      </div>
+      <div class="promo-note">♻️ Precio especial con intercambio de botellas: $30.000/litro</div>
+    </div>
+
+  </div><!-- end products-grid -->
+
+  <!-- ===== RESUMEN DEL PEDIDO ===== -->
+  <div class="summary-section">
+    <div class="summary-title">📋 Resumen del Pedido</div>
+    <div class="summary-items" id="resumen-items">
+      <div class="summary-empty" id="empty-msg">Aún no has seleccionado productos</div>
+    </div>
+  </div>
+
+  <!-- ===== FORM DATOS CLIENTE ===== -->
+  <div class="form-section">
+    <div class="form-title">👤 Tus Datos para el Pedido</div>
+
+    <div class="form-group">
+      <label>Nombre Completo *</label>
+      <input type="text" id="f-nombre" placeholder="Tu nombre y apellido" autocomplete="name" />
+    </div>
+
+    <div class="form-group">
+      <label>Celular *</label>
+      <input type="tel" id="f-cel" placeholder="300 000 0000" autocomplete="tel" maxlength="10" />
+    </div>
+
+    <div class="form-group">
+      <label>Observaciones / Dirección de entrega</label>
+      <textarea id="f-obs" placeholder="Ej: Barrio Las Flores, casa esquinera con portón azul. Entrega en la tarde..."></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>📍 Ubicación GPS</label>
+      <button class="gps-btn" id="gps-btn" onclick="obtenerGPS()">
+        <span>📍</span>
+        <span id="gps-label">Toca aquí para compartir tu ubicación</span>
+      </button>
+      <div id="gps-status"></div>
+    </div>
+  </div>
+
+  <!-- ===== BOTÓN ENVIAR ===== -->
+  <button class="send-btn" id="btn-enviar" onclick="enviarPedido()">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    Enviar Pedido por WhatsApp
+  </button>
+
+</main>
+
+<!-- FOOTER -->
+<div class="ornament">❧ ✦ ❧</div>
+<footer>
+  <p>Hecho con ❤️ · Fermentado con amor para ti y los tuyos</p>
+  <p style="margin-top:5px;"><strong>Desarrollada por Vibras Positivas HM</strong> — Derechos de Autor Reservados</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  // ===== SERVICE WORKER =====
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  }
+
+  // ===== RELOJ COLOMBIA (UTC-5) =====
+  function actualizarReloj() {
+    const ahora = new Date();
+    const col = new Intl.DateTimeFormat('es-CO', {
+      timeZone: 'America/Bogota',
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true
+    }).format(ahora);
+    document.getElementById('reloj-col').textContent = col;
+  }
+  actualizarReloj();
+  setInterval(actualizarReloj, 1000);
+
+  // ===== PRODUCTOS =====
+  const productos = {
+    kl: { nombre: 'Kéfir de Leche',             precio: 35000, unidad: 'litro(s)' },
+    ka: { nombre: 'Kéfir de Agua',              precio: 25000, unidad: 'litro(s)' },
+    sk: { nombre: 'Suero 100% de Kéfir',        precio: 10000, unidad: 'und (½ litro)' },
+    pm: { nombre: 'Postre Mielmesabe de Kéfir', precio: 15000, unidad: 'unidad(es)' },
+    kb: { nombre: 'Kombucha',                    precio: 35000, unidad: 'litro(s)' }
+  };
+
+  const cantidades = { kl: 0, ka: 0, sk: 0, pm: 0, kb: 0 };
+
+  function fmt(n) {
+    return '$' + n.toLocaleString('es-CO');
+  }
+
+  function changeQty(key, delta) {
+    cantidades[key] = Math.max(0, cantidades[key] + delta);
+    document.getElementById('qty-' + key).textContent = cantidades[key];
+    const sub = cantidades[key] * productos[key].precio;
+    document.getElementById('sub-' + key).textContent = sub > 0 ? fmt(sub) : '$0';
+    actualizarResumen();
+  }
+
+  function actualizarResumen() {
+    const wrap = document.getElementById('resumen-items');
+    const empty = document.getElementById('empty-msg');
+    let html = '';
+    let total = 0;
+    let hayItems = false;
+
+    for (const [key, p] of Object.entries(productos)) {
+      if (cantidades[key] > 0) {
+        hayItems = true;
+        const sub = cantidades[key] * p.precio;
+        total += sub;
+        html += `<div class="summary-row">
+          <span>${p.nombre} × ${cantidades[key]} ${p.unidad}</span>
+          <span>${fmt(sub)}</span>
+        </div>`;
+      }
+    }
+
+    if (hayItems) {
+      html += `<div class="summary-row total">
+        <span>TOTAL PEDIDO</span>
+        <span>${fmt(total)}</span>
+      </div>`;
+      wrap.innerHTML = html;
+    } else {
+      wrap.innerHTML = '<div class="summary-empty" id="empty-msg">Aún no has seleccionado productos</div>';
+    }
+  }
+
+  // ===== BENEFITS TOGGLE =====
+  function toggleBenefits(key) {
+    const list = document.getElementById('ben-' + key);
+    const arrow = document.getElementById('arrow-' + key);
+    const toggle = list.previousElementSibling;
+    const open = list.classList.contains('visible');
+    list.classList.toggle('visible', !open);
+    toggle.classList.toggle('open', !open);
+    arrow.textContent = open ? '▼' : '▲';
+  }
+
+  // ===== GPS =====
+  let coordsGPS = null;
+
+  function obtenerGPS() {
+    const btn = document.getElementById('gps-btn');
+    const label = document.getElementById('gps-label');
+    const status = document.getElementById('gps-status');
+    label.textContent = 'Obteniendo ubicación...';
+    status.textContent = '';
+    status.className = '';
+
+    if (!navigator.geolocation) {
+      label.textContent = 'GPS no disponible en este dispositivo';
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        coordsGPS = { lat: pos.coords.latitude, lng: pos.coords.longitude, acc: Math.round(pos.coords.accuracy) };
+        label.textContent = `✅ Ubicación capturada (±${coordsGPS.acc}m)`;
+        btn.classList.add('found');
+        status.textContent = `Lat: ${coordsGPS.lat.toFixed(5)}, Lng: ${coordsGPS.lng.toFixed(5)}`;
+        status.className = 'ok';
+      },
+      (err) => {
+        label.textContent = 'No se pudo obtener ubicación. Descríbela abajo.';
+        status.textContent = 'Tip: Activa el GPS de tu celular e intenta de nuevo.';
+      },
+      { enableHighAccuracy: true, timeout: 10000 }
+    );
+  }
+
+  // ===== TOAST =====
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3000);
+  }
+
+  // ===== ENVIAR PEDIDO =====
+  function enviarPedido() {
+    const nombre = document.getElementById('f-nombre').value.trim();
+    const cel = document.getElementById('f-cel').value.trim();
+    const obs = document.getElementById('f-obs').value.trim();
+
+    if (!nombre) { showToast('⚠️ Por favor escribe tu nombre'); return; }
+    if (!cel || cel.length < 7) { showToast('⚠️ Escribe tu número de celular'); return; }
+
+    let totalItems = 0;
+    for (const k in cantidades) totalItems += cantidades[k];
+    if (totalItems === 0) { showToast('⚠️ Selecciona al menos un producto'); return; }
+
+    // Hora Colombia
+    const ahoraCol = new Intl.DateTimeFormat('es-CO', {
+      timeZone: 'America/Bogota',
+      year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
+    }).format(new Date());
+
+    let msg = `🌿 *PEDIDO — RECUERDOS DE MI ABUELA* 🌿\n`;
+    msg += `━━━━━━━━━━━━━━━━━━━━\n`;
+    msg += `📅 Fecha: ${ahoraCol}\n\n`;
+
+    msg += `👤 *DATOS DEL CLIENTE*\n`;
+    msg += `• Nombre: ${nombre}\n`;
+    msg += `• Celular: ${cel}\n\n`;
+
+    msg += `🛒 *DETALLE DEL PEDIDO*\n`;
+    msg += `━━━━━━━━━━━━━━━━━━━━\n`;
+
+    let total = 0;
+    for (const [key, p] of Object.entries(productos)) {
+      if (cantidades[key] > 0) {
+        const sub = cantidades[key] * p.precio;
+        total += sub;
+        msg += `• ${p.nombre}\n`;
+        msg += `  ${cantidades[key]} ${p.unidad} × ${fmt(p.precio)} = *${fmt(sub)}*\n`;
+      }
+    }
+
+    msg += `━━━━━━━━━━━━━━━━━━━━\n`;
+    msg += `💰 *TOTAL: ${fmt(total)}*\n\n`;
+
+    if (obs) {
+      msg += `📝 *Observaciones:*\n${obs}\n\n`;
+    }
+
+    if (coordsGPS) {
+      msg += `📍 *Ubicación GPS:*\nhttps://www.google.com/maps?q=${coordsGPS.lat},${coordsGPS.lng}\n(Precisión: ±${coordsGPS.acc}m)\n\n`;
+    }
+
+    msg += `_Natural · Hecho en Casa · Hecho con Amor_\n`;
+    msg += `_Para compartir en familia_ 🌿❤️`;
+
+    const url = `https://wa.me/573001638585?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+  }
+</script>
+
+</body>
+</html>
